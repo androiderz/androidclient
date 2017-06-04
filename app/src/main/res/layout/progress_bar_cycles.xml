@@ -1,0 +1,191 @@
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chart_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="10sp"
+        android:background="@drawable/grey_lines" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_weight="4">
+
+            <RelativeLayout
+                android:id="@+id/unstarted_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/UNSTARTED"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/progressbar_gray"
+                    android:secondaryProgress="0" />
+
+                <TextView
+                    android:id="@+id/tv_unstarted_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="0" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_unstarted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/unstarted_chart"
+                android:layout_centerHorizontal="true"
+                android:text="unstarted"
+                android:textAllCaps="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_weight="4">
+
+            <RelativeLayout
+                android:id="@+id/started_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/STARTED"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="20"
+                    android:progressDrawable="@drawable/progressbar_orange"
+                    android:secondaryProgress="0" />
+
+                <TextView
+                    android:id="@+id/tv_started_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="0" />
+            </RelativeLayout>
+            [2017-06-04, 14:42:54] Mikael: <TextView
+            android:id="@+id/tv_started"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/started_chart"
+            android:layout_centerHorizontal="true"
+            android:text="started"
+            android:textAllCaps="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_weight="4">
+
+            <RelativeLayout
+                android:id="@+id/done_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/DONE"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="40"
+                    android:progressDrawable="@drawable/progressbar_green"
+                    android:secondaryProgress="0" />
+
+                <TextView
+                    android:id="@+id/tv_done_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="0" />
+                />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/done_chart"
+                android:layout_centerHorizontal="true"
+                android:text="done"
+                android:textAllCaps="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_weight="4">
+
+            <RelativeLayout
+                android:id="@+id/my_items_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/MyTask"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="60"
+                    android:progressDrawable="@drawable/progressbar_purple"
+                    android:secondaryProgress="0" />
+
+
+                <TextView
+                    android:id="@+id/tv_my_items_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="0" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_my_items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_items_chart"
+                android:layout_centerHorizontal="true"
+                android:text="my task"
+                android:textAllCaps="true" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="10sp"
+        android:background="@drawable/grey_lines" />
+</LinearLayout>

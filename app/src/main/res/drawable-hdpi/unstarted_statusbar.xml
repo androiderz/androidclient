@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/workitem_statusbar_unstarted"
+        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignBaseline="@+id/workitem_title"
+    android:layout_alignParentRight="true"
+    android:width="80dp"
+    android:background="@android:color/darker_gray"
+    android:gravity="right"
+    android:text="Unstarted"
+    android:textAlignment="center"
+    android:textColor="#fff" />
+</selector>
