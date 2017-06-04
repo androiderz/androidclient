@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/menabenyamen/Documents/androidProgramering/TaskR/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0ebac251a1d2bb4d98dd7ddc22a35eda1aa4fd02">
+        <dex dex="/Users/menabenyamen/Documents/androidProgramering/TaskR/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_454fd3fd4ba9b89dbc8c2b0e1c33fd28060825ca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/menabenyamen/Documents/androidProgramering/TaskR/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/menabenyamen/Documents/androidProgramering/TaskR/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_14091559d101607dc499a068259ad438b4120082/classes.dex" />
+    </item>
+
+</items>
