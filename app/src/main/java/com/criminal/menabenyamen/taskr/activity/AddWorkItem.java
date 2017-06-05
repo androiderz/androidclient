@@ -57,15 +57,60 @@ public class AddWorkItem extends AppCompatActivity {
                 descriptionEdit = description.getText().toString();
                 stateEdit = state.getText().toString();
                 assigneeEdit = assignee.getText().toString();
+  itemRepository.addWorkItem(new WorkItem(titleEdit, descriptionEdit, stateEdit, assigneeEdit));
+                    sendRequest(titleEdit, descriptionEdit, stateEdit, assigneeEdit);
 
-                itemRepository.addWorkItem(new WorkItem(titleEdit, descriptionEdit, stateEdit, assigneeEdit));
 
-
-            }
+           }
         });
 
 
     }
 
+
+
+    public boolean caheckInternet(){
+        ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return (networkInfo != null && networkInfo.isConnected());
+    }
+
+
+    private void sendRequest(final String itemTitle, final String itemDescription, final String itemStatus, final String itemAssignee) {
+
+        mQueue = CustomVolleyRequestQueue.getInstance(this.getApplicationContext())
+                .getRequestQueue();
+        final String url = "http://10.0.2.2:8080/items";
+
+        final String inputValue = "{\"title\":\"" + itemTitle +"\","
+                +"\"description\":\"" +itemDescription+"\","
+                +"\"status\":\"" + itemStatus+"\","
+                +"\"assignee\":\""+itemAssignee+"\"}";
+
+        JSONObject body = null;
+        try {
+            body = new JSONObject(inputValue);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        final JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, body,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        itemRepository.addWorkItem(new WorkItem(itemTitle, itemDescription, itemStatus, itemAssignee));
+                        Toast.makeText(getApplicationContext(), "Registering Ok", Toast.LENGTH_LONG).show();
+                    }
+
+                } , new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(),Toast.LENGTH_LONG).show();
+            }
+        });
+
+        jsonRequest.setTag(REQUEST_TAG);
+        mQueue.add(jsonRequest);
+    }
 
 }
